@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading/Loading";
 import Slider from "react-slick/lib/slider";
-import RelatedProduct from "../relatedProduct/relatedProduct";
+import RelatedProduct from "../relatedProduct/RelatedProduct";
 import { addToCart } from "../../cartService";
 
 export default function ProductDetails() {
