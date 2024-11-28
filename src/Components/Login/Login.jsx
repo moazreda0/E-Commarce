@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { authContext } from "../../Context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { setToken } = useContext(authContext);
@@ -56,6 +57,11 @@ const Login = () => {
     validationSchema: validation,
   });
   return (
+  <>
+  
+    <Helmet>
+        <title>login</title>
+      </Helmet>
     <div className="py-5">
       <h1 className="mb-5 text-green-700 text-5xl font-bold text-center">
         Login
@@ -135,6 +141,7 @@ const Login = () => {
 <p className="text-center">  <Link to="/Forget" className="text-green-700 font-bold underline">Forgotten your password?</Link></p>
       </div>
     </div>
+    </>
   );
 };
 

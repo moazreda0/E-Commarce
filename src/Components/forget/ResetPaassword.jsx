@@ -29,7 +29,7 @@ const ResetPassword = () => {
 
       if (res.data.status === "Success") {
         toast.success(res.data.message);
-        navigate("/newPassword"); // الانتقال لصفحة تسجيل الدخول
+        navigate("/newPassword"); 
       } else {
         toast.error("Failed to reset password");
       }

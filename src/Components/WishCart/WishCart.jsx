@@ -7,7 +7,7 @@ import { addToCart } from '../../cartService';
 import toast from 'react-hot-toast';
 
 export default function WishCart() {
-  const [wishList, setWishList] = useState([]); // تعديل: تهيئة wishList كـ array
+  const [wishList, setWishList] = useState([]); 
   const [isLoading, setIsLoading] = useState(true);
 
   async function getUserWishList() {
@@ -16,8 +16,7 @@ export default function WishCart() {
       const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/wishlist', {
         headers: { token: localStorage.getItem('tkn') },
       });
-      console.log(data);
-      setWishList(data.data); // تخزين البيانات مباشرة في wishList
+      setWishList(data.data); 
       setIsLoading(false);
     } catch (error) {
       toast.error('Error fetching wishlist');

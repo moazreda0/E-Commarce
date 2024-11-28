@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { authContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Forget = () => {
   const navigate = useNavigate(); // استخدام useNavigate
@@ -33,7 +34,7 @@ const Forget = () => {
       toast.success(res.data.message);
 
       if (res.data.statusMsg === "success") {
-        navigate('/resetPaassword'); // استخدام navigate بدلاً من Navigate
+        navigate('/resetPaassword'); 
       }
 
      
@@ -54,6 +55,10 @@ const Forget = () => {
   });
 
   return (
+    <>
+    <Helmet>
+        <title>forget</title>
+      </Helmet>
     <div className="py-5">
       <h1 className="mb-5 text-green-700 text-5xl font-bold text-center">
         Forget
@@ -101,6 +106,8 @@ const Forget = () => {
         </form>
       </div>
     </div>
+    </>
+
   );
 };
 
